@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/firstPage">
+
+    <fragment
+        android:id="@+id/firstPage"
+        android:name="com.example.navgraph.FirstPage"
+        android:label="First Page"
+        tools:layout="@layout/fragment_first_page" >
+        <action
+            android:id="@+id/action_firstPage_to_thirdPage"
+            app:destination="@id/thirdPage" />
+        <action
+            android:id="@+id/action_firstPage_to_secondPage"
+            app:destination="@id/secondPage" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondPage"
+        android:name="com.example.navgraph.SecondPage"
+        android:label="Second Page"
+        tools:layout="@layout/fragment_second_page">
+        <action
+            android:id="@+id/action_secondPage_to_thirdPage"
+            app:destination="@id/thirdPage" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/thirdPage"
+        android:name="com.example.navgraph.ThirdPage"
+        android:label="Third Page"
+        tools:layout="@layout/fragment_third_page" >
+        <action
+            android:id="@+id/action_thirdPage_to_secondPage"
+            app:destination="@id/secondPage" />
+    </fragment>
+</navigation>
